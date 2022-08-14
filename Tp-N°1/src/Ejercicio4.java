@@ -44,7 +44,7 @@ public class Ejercicio4 {
         System.out.println(palabra);*/
     }
 
-     //modulo para contar la cantidada de palabras de la frase
+    //modulo para contar la cantidada de palabras de la frase
     public static int CantOcurrencias(String cadena){
         int palabras,longitud;
         palabras=1;
