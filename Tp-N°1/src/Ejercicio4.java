@@ -1,47 +1,44 @@
+
 import java.util.Scanner;
 public class Ejercicio4 {
     public static void main(String[]args){
-        String frase;
-        int cantLetras,cantWord;
+        String frase,palabra;
+        int mayor,j;
+        j=1;
+        mayor=0;
+        boolean valor;
+        valor=false;
+        palabra="";
         Scanner sc=new Scanner(System.in);
         System.out.println("Ingrese frase");
         frase=sc.nextLine();
-        cantLetras=SepararPalabra(frase);
-        System.out.println(cantLetras);
-        cantWord=CantOcurrencias(frase);
-        System.out.println(cantWord);
-        for(int i=0;i<cantWord;i++){
-            
-        }
+        int longitud;
+        longitud=frase.length();
+      
+        for(int i=0;i<longitud;i++ ){
+            if(frase.charAt(i)==' '){
+                if(mayor<i){
+                    mayor=i+1;
+                }
+                System.out.println(mayor);
+                while(){
 
-    }
-    
-    //modulo para contar la cantidada de palabras de la frase
-    public static int CantOcurrencias(String cadena){
-        int palabras,longitud;
-        palabras=1;
-        longitud=cadena.length();
-        for(int i=0; i<longitud;i++){
-            if(cadena.charAt(i)==' '){
-                palabras++;
-            } 
-        }
-        return palabras;
+                }
+                j++;
+            }
+           
+            
+        }   
+        System.out.println(j);
     }
 
     //modulo para separar la palabras de la frase
-    public static int SepararPalabra(String cadena){
-        int i,longitud;
+  /*  public static int SepararPalabra(String cadena,int i){
+        int longitud;
         boolean valor;
-        i=0;
         valor=false;
         longitud=cadena.length();
-        while(valor=false || i<longitud){
-            if(cadena.charAt(i)!=' '){
-                valor=true;
-            }
-            i++;
-        }
-        return i;
-    }
+        
+        
+    }*/
 }
