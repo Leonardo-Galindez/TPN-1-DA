@@ -2,43 +2,59 @@
 import java.util.Scanner;
 public class Ejercicio4 {
     public static void main(String[]args){
-        String frase,palabra;
-        int mayor,j;
-        j=1;
+        String frase,palabra,bin;
+        int mayor,j,cantPala,i;
+        cantPala=1;
+        i=0;
+        bin="";
+        j=0;
         mayor=0;
         boolean valor;
         valor=false;
         palabra="";
+
         Scanner sc=new Scanner(System.in);
+
         System.out.println("Ingrese frase");
         frase=sc.nextLine();
         int longitud;
         longitud=frase.length();
-      
-        for(int i=0;i<longitud;i++ ){
-            if(frase.charAt(i)==' '){
-                if(mayor<i){
-                    mayor=i+1;
-                }
-                System.out.println(mayor);
-                while(){
+        cantPala=CantOcurrencias(frase);
 
-                }
-                j++;
+        for(int cant=1;cant<=cantPala;cant++){
+            while(frase.charAt(i)!=' '&& i<longitud-1){
+                palabra=palabra+frase.charAt(i);
+                i++;
             }
-           
-            
-        }   
-        System.out.println(j);
+            j=palabra.length();
+            if(mayor<j){
+                mayor=j;
+            }
+            i=mayor+1;
+            palabra="";
+        }
+    
+        
+        /*System.out.println(palabra);
+        j=palabra.length();
+        palabra="";
+        /*for (int i = j+1; i < longitud; i++) {
+            palabra = palabra + frase.charAt(i);
+        }     
+        System.out.println(palabra);*/
     }
 
-    //modulo para separar la palabras de la frase
-  /*  public static int SepararPalabra(String cadena,int i){
-        int longitud;
-        boolean valor;
-        valor=false;
+     //modulo para contar la cantidada de palabras de la frase
+    public static int CantOcurrencias(String cadena){
+        int palabras,longitud;
+        palabras=1;
         longitud=cadena.length();
-        
-        
-    }*/
+        for(int i=0; i<longitud;i++){
+            if(cadena.charAt(i)==' '){
+                palabras++;
+            } 
+        }
+        return palabras;
+    }
+     
 }
