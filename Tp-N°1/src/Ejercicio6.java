@@ -2,27 +2,20 @@ import java.util.Scanner;
 public class Ejercicio6 {
     public static void main(String[]args){
         Scanner sc=new Scanner(System.in);
-        String frase,palabra,nombre;
-        int cont,i,lon;
-        char caracter,car;
-        
-        cont =0;
-        nombre="";
+        String frase,palabra;
+        int cont;
         System.out.println("Ingrese la frase ");
         frase = sc.nextLine();
         System.out.println("Ingrese la palabra a buscar ");
         palabra =sc.nextLine();
-        
         cont=ContarPalabra(frase,palabra);
-
-        
         System.out.println("Se repitio la palabra \""+palabra+"\" : "+cont+" veces");
     }
 
     public static int ContarPalabra(String cadena, String word){
         String nombre;
         int cont,i,lon;
-        char caracter,car;
+        char caracter;
         
         cont =0;
         nombre="";

@@ -1,17 +1,48 @@
-import javax.swing.SpringLayout;
+
 
 public class App {
-    public static void main(String[] args) throws Exception {
-        int i=0, n=5,suma=0,suma2;
-        for(i=1;i<=n;i++){
-            suma2=0;
-            for(int j=1;j<=i;j++){
-                suma2=suma2+j;
 
-            }
-            suma=suma+suma2;
-            
-        }
-        System.out.println(suma);
+public static void main(String[] args) {
+        String cad, mayor;
+        
+        System.out.println("Ingrese una frase para conocer su palabra mas larga.");
+        cad = TecladoIn.readLine();
+        
+        mayor = palabraMasLarga(cad);
+        
+        System.out.println("La palabra mas larga es: "+mayor);
     }
+    
+    public static String palabraMasLarga(String cad) {
+        
+        String palabra, masLarga;
+        int i;
+        
+        masLarga = "";
+        i = 0;
+        palabra = "";
+        
+        for (i = 0; i < cad.length(); i++) {
+            
+            if (!Character.isLetter(cad.charAt(i))) {
+                palabra = "";
+            }
+            
+            if (Character.isLetter(cad.charAt(i))) {
+                
+                palabra += cad.charAt(i);
+                
+            }
+            
+            if (palabra.length() > masLarga.length()) {
+                
+                masLarga = palabra;
+                
+            }
+        }
+        
+        return masLarga;
+        
+    }
+
 }
