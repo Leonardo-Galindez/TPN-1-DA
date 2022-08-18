@@ -13,18 +13,31 @@ public class Ejercicio6 {
         System.out.println("Ingrese la palabra a buscar ");
         palabra =sc.nextLine();
         
-        lon=frase.length();
+        cont=ContarPalabra(frase,palabra);
+
+        
+        System.out.println("Se repitio la palabra \""+palabra+"\" : "+cont+" veces");
+    }
+
+    public static int ContarPalabra(String cadena, String word){
+        String nombre;
+        int cont,i,lon;
+        char caracter,car;
+        
+        cont =0;
+        nombre="";
+        lon=cadena.length();
         for(i=0;i<lon;i++){
-            caracter=frase.charAt(i);
+            caracter=cadena.charAt(i);
             if(caracter==' '){
                 nombre="";
             }else{
             nombre= nombre+caracter;
             }
-            if((nombre).equals(palabra)){
+            if((nombre).equals(word)){
                 cont++;
             }
         }
-        System.out.println("Se repitio la palabra \""+palabra+"\" : "+cont+" veces");
+        return cont;
     }
 }
