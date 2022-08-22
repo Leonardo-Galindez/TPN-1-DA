@@ -16,7 +16,6 @@ public class Ejercicio6 {
         String nombre;
         int cont,i,lon;
         char caracter;
-        
         cont =0;
         nombre="";
         lon=cadena.length();
@@ -24,13 +23,15 @@ public class Ejercicio6 {
             caracter=cadena.charAt(i);
             if(caracter==' '){
                 nombre="";
-            }else{
+            }
+            else{
             nombre= nombre+caracter;
             }
             if((nombre).equals(word)){
                 cont++;
             }
-        }
+        }  
         return cont;
+        
     }
 }
