@@ -21,15 +21,25 @@ public class Ejercicio6 {
         lon=cadena.length();
         for(i=0;i<lon;i++){
             caracter=cadena.charAt(i);
-            if(caracter==' '){
-                nombre="";
+            if(i==lon-1){
+                nombre= nombre+caracter;
+                if((nombre).equals(word)){
+                    cont++;
+                }
+            }else{
+                if(caracter==' '){
+                    if((nombre).equals(word)){
+                        cont++;
+                        nombre="";
+                    }else{
+                        nombre="";
+                    }
+                }else{
+                  nombre= nombre+caracter;
+                }
             }
-            else{
-            nombre= nombre+caracter;
-            }
-            if((nombre).equals(word)){
-                cont++;
-            }
+           
+            
         }  
         return cont;
         
